@@ -1,0 +1,145 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ management system</title>
+
+    <style>
+
+        body {
+            background-color: hsla(0, 0%, 90%);
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        form {
+            border: 2px solid black;
+            max-width: 60vw;
+            margin: auto;
+        }
+
+        fieldset {
+            padding: 1rem;
+            margin: 2rem;   
+        }
+
+        #btn {
+            width: 5rem;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            background-color: green;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        #box {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            font-size: 1.5rem;
+            text-align: center;
+            color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Online quiz</h1>
+
+    <form>
+
+        <fieldset>
+            <legend>Question 1</legend>
+            <label for="question1">What is the capital of India?</label>
+            <br>
+            <input type="radio" name="question1" id="answer1a" value="Delhi" checked="" required="">Delhi
+            <br>
+            <input type="radio" name="question1" id="answer1b" value="Mumbai">Mumbai
+            <br>
+            <input type="radio" name="question1" id="answer1c" value="Bengalore">Bengalore
+            <br>
+            <input type="radio" name="question1" id="answer1d" value="Ahemdabad">Ahemdabad
+        </fieldset>
+
+        <fieldset>
+            <legend>Question 2</legend>
+            <label for="question2">Which city has a branch of VIT?</label>
+            <br>
+            <input type="radio" name="question2" id="answer2a" value="Bangalore" checked="" required="">Bangalore
+            <br>
+            <input type="radio" name="question2" id="answer2b" value="Hyderabad">Hyderabad
+            <br>
+            <input type="radio" name="question2" id="answer2c" value="Mumbai">Mumbai
+            <br>
+            <input type="radio" name="question2" id="answer2d" value="Chennai">Chennai
+        </fieldset>
+
+        <fieldset>
+            <legend>Question 3</legend>
+            <label for="question1">Which of the following branches are not available in VIT Chennai?</label>
+            <br>
+            <input type="radio" name="question3" id="answer3a" value="CSE" checked="" required="">CSE
+            <br>
+            <input type="radio" name="question3" id="answer3b" value="Civil Engineering">Civil Engineering
+            <br>
+            <input type="radio" name="question3" id="answer3c" value="ECE">ECE
+            <br>
+            <input type="radio" name="question3" id="answer3d" value="ECM">ECM
+        </fieldset>
+
+        <input type="button" value="Submit" id="btn">
+
+    </form>
+
+        <div id="box"></div>
+
+
+        <!--JavaScript-->
+
+        <script>
+
+            const ans1 = "Delhi";
+            const ans2 = "Chennai";
+            const ans3 = "Civil Engineering";
+
+            const answers1 = document.getElementsByName("question1");
+            const answers2 = document.getElementsByName("question2");
+            const answers3 = document.getElementsByName("question3");
+
+            document.getElementById("btn").addEventListener("click", ()=> {
+
+                let marks = 0;
+
+                answers1.forEach(answer1 => {
+                    if(answer1.checked && answer1.value==(ans1)) {
+                        marks += 5;
+                    }
+                });
+
+                answers2.forEach(answer2 => {
+                    if(answer2.checked && answer2.value==(ans2)) {
+                        marks += 5;
+                    }
+                });
+                answers3.forEach(answer3 => {
+                    if(answer3.checked && answer3.value==(ans3)) {
+                        marks += 5;
+                    }
+                });
+
+                const box = document.getElementById("box");
+                box.innerHTML = `Horray!!! <br> You have got ${marks} marks out of 15`;
+
+            });
+
+        </script>
+    
+
+</body></html>

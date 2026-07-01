@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(178, 143, 239);
+        }
+
+        h1 {
+            margin: 1rem;
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        p {
+            margin: 1rem;
+            font-size: 2rem;
+        }
+
+        #btn,#btn2 {
+            padding: 0.5rem;
+            margin: 1rem;
+            border: 2px solid black;
+            background-color: white;
+            border-radius: 1rem;
+        }
+
+        #btn:hover,#btn2:hover {
+            background-color: red;   
+            color: white; 
+        }
+
+        #box {
+            height: 10rem;
+            width: 10rem;
+            padding: 0.5rem;
+            margin: 1rem;
+            background-color: green;
+        }
+
+        #name {
+            margin: 1rem;
+            padding: 0.5rem;
+            background-color: white;
+            border: 2px none black;
+            width: 15rem;
+            border-radius: 1rem;
+
+        }
+
+        #bigbox {
+            height: 20rem;
+            width: 20rem;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;   
+            margin: 1rem;
+        }
+
+        .boxes,#box2 {
+            height: 9rem;
+            width: 9rem;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #link {
+            margin: 1rem;
+            text-decoration: none;
+            color: rgb(0, 47, 255);
+            font-size: 2rem;
+        }
+
+        #link:hover {
+            color: red;
+            text-decoration: underline;
+        }
+
+        #box2 {
+            margin: 1rem;
+        }
+
+        #image {
+            display: block;
+            height: 10rem;
+            margin: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Web development IPS - 20/02/24</h1>
+
+    <!--Problem-1-->
+    <p>Program 1:</p>
+    <button id="btn">Click me</button>
+    <hr>
+
+    <!--Problem-2-->
+    <p>Program 2:</p>
+    <div id="box"></div>
+    <hr>
+
+    <!--Problem-3-->
+    <p>Program 3:</p>
+    <form>
+        <input type="text" id="name" placeholder="  Enter your name">
+    </form>
+    <hr>
+
+    <!--Problem-4-->
+    <p>Program 4:</p>
+    <div id="bigbox">
+        <div class="boxes">box1<br>Click me</div>
+        <div class="boxes">box2<br>Click me</div>
+        <div class="boxes">box3<br>Click me</div>
+        <div class="boxes">box4<br>Click me</div>
+    </div>
+    <hr>
+
+    <!--Problem-5-->
+    <p>Program 5:</p>
+    <a href="https://www.google.com" id="link">Click me</a>
+    <hr>
+
+    <!--Problem-6-->
+    <p>Program 6:</p>
+    <div id="box2">Click below to toggle my visibility</div>
+    <button id="btn2">Toggle it</button>
+    <hr>
+
+    <!--Problem-7-->
+    <p>Program 7:</p>
+    <img id="image" src="https://wallpapers.com/images/high/naruto-pictures-6pe7ytm74dlzc4ew.webp" alt="naruto_image1">
+    <hr>
+
+
+    <script>
+
+        //Problem-1
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click",() => {
+            alert("Button was clicked");
+        });
+
+        //Problem-2
+        const box = document.getElementById("box");
+        box.addEventListener("mouseover",() => {
+            box.style.backgroundColor = "red";
+        });
+        box.addEventListener("mouseout", () => {
+            box.style.backgroundColor = "green";
+        });
+
+        //Problem-3
+        const name = document.getElementById("name");
+        name.addEventListener("keypress",(key) => {
+            if(key.key==="Enter") {
+                alert("Enter is pressed");
+            }
+        });
+        
+        //Problem-4
+        const boxes = document.querySelectorAll(".boxes");
+        boxes.forEach(element => {
+            element.addEventListener("click",() => {
+                    element.style.backgroundColor = "aqua";
+                    element.innerText = "Box is clicked";
+            });
+        });
+
+        //Problem-5
+        document.getElementById("link").addEventListener("click",(event) => {
+            event.preventDefault();
+            alert("The default action is prevented using preventDefault")
+        });
+
+        //Problem-6
+        const btn2 = document.getElementById("btn2");
+        const box2 = document.getElementById("box2");
+        var toggle = true;
+        btn2.addEventListener("click", () => {
+            if(toggle) {
+                box2.style.visibility = "hidden";
+                toggle = false;
+            }
+            else {
+                box2.style.visibility = "visible";
+                toggle = true;
+            }
+        });
+
+        //Problem-7
+        const image = document.getElementById("image");
+        image.addEventListener("mouseover",() => {
+            image.src = "https://wallpapers.com/images/high/naruto-pictures-pdbcq4m4uim59egw.webp";
+            image.alt = "Naruto_image2";
+        });
+        image.addEventListener("mouseout",() => {
+            image.src ="https://wallpapers.com/images/high/naruto-pictures-6pe7ytm74dlzc4ew.webp";
+            image.alt = "Naruto_image1";
+        });
+
+    </script>
+
+</body>
+</html>

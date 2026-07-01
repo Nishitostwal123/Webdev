@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        .radio{
+            color:red;
+        }
+        #id5{
+            color:red;
+            background-color: aqua;
+        }
+        body{
+            color:aqua;
+            background-color: rgb(43, 41, 41);
+        }
+    </style>
+</head>
+
+<body>
+    <h3 style="text-align: center;">Welcome to the feedback form of learn parge</h3>
+    <form>
+        <label id="id1">
+            <input type="text" placeholder="Enter your name">
+        </label>
+
+        <p>How was the page 
+            <label id="id5">
+                <select name="Rank" id="id5">
+                    <option value="Good">Good</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Bad">Bad</option>
+                </select>
+            </label>
+        </p>
+
+        <label id="id1" class="radio">
+            <input type="radio" value="Good" name="like" id="id1"> Good 
+        </label>
+        <br>
+        <label id="id2" class="radio">
+            <input type="radio" value="Moderate"  name="like" id="id2"> Moderate 
+        </label>
+        <br>
+        <label id="id3" class="radio">
+            <input type="radio" value="Bad"  name="like" id="id3"> Bad 
+        </label>
+
+        <br>
+        <br>
+        
+        <label id="id4">
+            <textarea name="feedback" id="feedback" placeholder="Please add Feedback"></textarea>
+        </label>
+
+        <br>
+        <br>
+        <input type="reset">
+        <input type="submit">
+
+    </form>
+
+</body>
+
+</html>

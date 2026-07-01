@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        }
+
+        .container>h2 {
+            text-align: center;
+        }
+
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        #box1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        #textbox {
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <h1>Web Dev IPS 22-02-2024</h1>    
+    <hr>
+    <!--Program 1-->
+
+    <h2>Problem 1:</h2>
+    <p>Select any option from the radio button and click Show button</p>
+    School:
+    <input type="radio" name="sch1" value="SCOPE" checked/>CSE
+    <input type="radio" name="sch1" value="SENSE" />ECE
+    <input type="radio" name="sch1" value="SMEC" disabled/>Mech
+    <br />
+    <br />
+    <button type="button" onclick="rbval()">Show</button>
+    <br />
+    <br />
+    <div id="res"></div>
+    <br />
+    <hr>
+
+    <!--Program 2-->
+    <h2>Problem 2:</h2>
+    <form id="selectionForm">
+        <fieldset>
+            <legend>School:</legend>
+            <label><input type="radio" name="school" value="SCOPE" required> SCOPE</label>
+            <label><input type="radio" name="school" value="SENSE"> SENSE</label>
+            <label><input type="radio" name="school" value="SMEC"> SMEC</label>
+        </fieldset>
+        <br />
+
+        <fieldset>
+            <legend>Campus:</legend>
+            <label><input type="radio" name="campus" value="Chennai" required> Chennai</label>
+            <label><input type="radio" name="campus" value="Vellore"> Vellore</label>
+            <label><input type="radio" name="campus" value="Bhopal"> Bhopal</label>
+        </fieldset>
+        <br />
+
+        <button type="button" onclick="displaySelection()">Display</button>
+    </form>
+    <br />
+
+    <div id="display"></div>
+    <br />
+    <hr />
+
+    <!--Program 3-->
+    <h2>Problem 3:</h2>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="form1">
+            <label for="uname">Name:</label>
+            <input type="text" id="uname" name="uname" placeholder="Enter your name" required>
+            <br />
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter you valid Email" required>
+            <br />
+    
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" placeholder="Enter your mobile no.">
+            <br />
+            <br />
+    
+            <label for="gender">Gender:</label>
+            <br />
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label>
+            <br />
+            <br />
+
+            <label for="interests">Interests:</label>
+            <br />
+            <input type="checkbox" id="coding" name="interests" value="Coding">
+            <label for="coding">Coding</label>
+            <input type="checkbox" id="reading" name="interests" value="Rerading">
+            <label for="reading">Reading</label>
+            <input type="checkbox" id="music" name="interests" value="Music">
+            <label for="music">Music</label>
+            <br />
+            <br />
+    
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="U.S.A.">India</option>
+                <option value="Canada">USA</option>
+                <option value="U.K.">UK</option>
+                <option value="Australia">Australia</option>
+            </select>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <br />
+            
+            <div id="box1">
+            <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <div id="textbox"><p id="text"></p></div>
+
+    <script>
+
+        //Program 1:
+        function rbval() {
+            let val = document.getElementsByName("sch1");
+            for (let i = 0; i < val.length; i++) {
+                if (val[i].checked) {
+                    document.getElementById("res").innerHTML = "School: " + val[i].value;
+                }
+            }
+        }
+
+        //Program 2:
+        function displaySelection() {
+            const school = document.querySelector('input[name="school"]:checked');
+            const campus = document.querySelector('input[name="campus"]:checked');
+
+            if (school && campus) {
+                var displayText = "Selected School: " + school.value + "<br>";
+                displayText += "Selected Campus: " + campus.value;
+                document.getElementById("display").innerHTML = displayText;
+            } else {
+                alert("Please select both a school and a campus.");
+            }
+        }
+
+        //Program 3:
+
+        document.getElementById("form1").addEventListener("submit",(event) => {
+            event.preventDefault();
+            const uname = document.getElementById("uname").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const interests = document.getElementsByName('interests');
+            var Values = [];
+            interests.forEach(el => {
+                if(el.checked) {
+                Values.push(el.value);
+                }
+            })
+            const country = document.querySelector("#country").value;
+            const text = document.getElementById("text");
+
+            text.innerHTML = `Name: ${uname}<br>Email: ${email}<br>Phone: ${phone}<br>Gender: ${gender}<br>Interests: ${Values.join(", ")}<br>Country: ${country}`;
+            
+        });
+        
+
+    </script>
+  </body>
+</html>

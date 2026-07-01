@@ -1,0 +1,58 @@
+*{
+    color:white;
+    background-color: rgb(51, 49, 49);
+}
+
+#h1{
+    color:red;
+    text-align: center;
+    text-decoration: underline yellow dotted ;
+}
+
+.heading{
+    color:aqua;
+}
+
+button{
+    color:blue;
+    background-color: grey;
+}
+
+#d1{
+    color:red;
+}
+
+#h5{
+    font-weight: normal;
+    font-size: small;
+}
+
+#h6{
+    font-weight: lighter;
+    font-family: cursive;
+    font-size: 40px;
+}
+
+#one{
+    color:rosybrown;
+    text-align: right;
+}
+
+#two{
+    line-height: 0px;
+}
+
+#outer{
+    font-size: 25px;
+}
+
+#inner{
+    font-size: 10px;
+}
+
+
+
+
+
+
+

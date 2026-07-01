@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form using form tags</title>
+  <style>
+    * {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url("https://images.unsplash.com/photo-1517817748493-49ec54a32465?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+}
+
+div.main {
+    width: 400px;
+    margin-top: 18px;
+    margin-left: 50%;
+    transform: translateX(-60%);
+}
+
+h2 {
+    text-align: center;
+    padding: 25px 20px 0px 20px;
+    font-family: sans-serif;
+}
+
+div.register {
+    padding: 20px 50px 0px 50px;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    font-size: 180x;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+    color: #ffff;
+}
+
+form#register {
+    margin: 40px;
+}
+
+label {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: italic;
+}
+
+input#name,input#password {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+    background-color: #fff;
+    box-shadow: inset 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+select {
+    width: 316px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+    background-color: #fff;
+    box-shadow: inset 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+input#submit, input#reset{
+    width: 200px;
+    margin-left: 50px;
+    padding: 7px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(250,100,0,0.8);
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+label,span,h2 {
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="register">
+      <h2>Register Here</h2>
+      <form id="register" method="post">
+        <label>Username :</label>
+        <br>
+        <input type="text" name="name" id="name" placeholder="Enter your Username" maxlength="20" required>
+        <br><br>
+        <label>Email :</label>
+        <br>
+        <input type="email" name="email" id="name" placeholder="Enter your Email" required>
+        <br><br>
+        <label>Password :</label>
+        <br>
+        <input type="password" name="password" id="password" placeholder="Enter your Password" maxlength="20" required>
+        <br><br>
+        <label>City :</label>
+        <br>
+        <select id="select">
+          <option selected disabled>Select your city</option>
+          <option>Chennai</option>
+          <option>Delhi</option>
+          <option>Mumbai</option>
+          <option>Banglore</option>
+        </select>
+        <!-- <input type="number" name="age" id="name" placeholder="How old are you" required> -->
+        <br><br>
+        <label>Gender :</label>
+        <br><br>
+        &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" id="male">
+        &nbsp;<span id="male">Male</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" id="female">
+        &nbsp;
+        <span id="female">Female</span>
+        <br><br>
+        <label>Known Languages :</label>
+        <br><br>
+        &nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="lang" id="hindi">
+        &nbsp;<span id="hindi">C++</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="lang" id="eng">
+        &nbsp;<span id="eng">Java</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" name="lang" id="spanish">
+        &nbsp;<span id="spanish">JavaScript</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <br><br><br>
+        <input type="reset" value="Reset" name="reset" id="reset">
+        <br>
+        <input type="submit" value="Submit" name="submit" id="submit">
+      </form>
+    </div>
+  </div>
+</body>
+</html>

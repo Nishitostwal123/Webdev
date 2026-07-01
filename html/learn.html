@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn html tag</title>
+  <link rel="shortcut icon" href="image1.jpg">
+</head>
+
+<body>
+  <table border="3" style="border-collapse: collapse;">
+    <tr>
+      <th rowspan="2">Subject</th>
+      <th colspan="2">Marks</th>
+      <th rowspan="2" colspan="2">Grade</th>
+    </tr>
+    <tr>
+      <th>Theory</th>
+      <th>Lab</th>
+    </tr>
+    <tr>
+      <th>DSA</th>
+      <td>90</td>
+      <td>95</td>
+      <td>S</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>Python</th>
+      <td style="text-align: center;">-</td>
+      <td>99</td>
+      <td style="text-align: center;">-</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>Java</th>
+      <td style="text-align: center;">-</td>
+      <td>69</td>
+      <td style="text-align: center;">-</td>
+      <td>C</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <ul>
+    <li>
+      Coffee
+      <ol>
+        <li>Cappuccino</li>
+        <li>Americano</li>
+        <li>Espresso</li>
+      </ol>
+    </li>
+    <li>
+      Tea
+      <ol>
+        <li>Milk Tea</li>
+        <li>Black Tea</li>
+      </ol>
+    </li>
+    <li>Milk</li>
+  </ul>
+
+  <hr>
+
+  <ol start='5'>
+    <li>Harry</li>
+    <li>Ron</li>
+    <li>Sam</li>
+  </ol>
+
+  <hr>
+
+  <ol reversed type="I" start="10">
+    <li>Cat</li>
+    <li>Dog</li>
+    <li>Elephant</li>
+    <li>Fish</li>
+  </ol>
+
+  <hr>
+
+  <ol type="I">
+    <li>
+      Chapter 1
+      <ol type="a">
+        <li>Lesson 1</li>
+        <li>Lesson 2</li>
+      </ol>
+    </li>
+    <li>
+      Chapter 2
+      <ol type="a">
+        <li>Lesson 1</li>
+        <li>Lesson 2</li>
+        <li>Lesson 3</li>
+      </ol>
+    </li>
+    <li>
+      Chapter 3
+      <ol type="a">
+        <li>Lesson 1</li>
+      </ol>
+    </li>
+  </ol>
+
+  <hr>
+
+  <ol>
+    <li>
+      Prepare the ingredients.
+      <ul>
+        <li>Eggs</li>
+        <li>Salt</li>
+        <li>Butter</li>
+      </ul>
+    </li>
+    <li>
+      Mix the ingredients and cook on a low flame.
+    </li>
+    <li>
+      Serve hot with garnish. You can use
+      <ul>
+        <li>Chives</li>
+        <li>Bacon</li>
+        <li>Coriander</li>
+      </ul>
+    </li>
+  </ol>
+
+  <hr>
+
+  <dl>
+    <dt>HTML</dt>
+    <dd>HyperText Markup Language.</dd>
+    <dd>Used to create Websites.</dd>
+    <dd>Released in 1993.</dd>
+  </dl>
+
+  <hr>
+
+  <p>
+    let inviteFunction = async (invite) => {
+    let response = await fetch("/invite", {
+    method: "POST",
+    headers: getHeaders(),
+    body: JSON.stringify(invite),
+    });
+    let data = await response.json();
+    if (response.ok) return data;
+    throw new Error(data);
+    }
+  </p>
+
+  <hr>
+
+  <pre>
+  let inviteFunction = async (invite) => {
+  let response = await fetch("/invite", {
+    method: "POST",
+    headers: getHeaders(),
+    body: JSON.stringify(invite),
+  });
+  let data = await response.json();
+  if (response.ok) return data;
+  throw new Error(data);
+}
+</pre>
+
+  <hr>
+
+  <p>This is how <span style="border: 1px solid black">span</span> works. </p>
+
+  <hr>
+
+  <p style="border: 1px solid black">Paragraphs are</p>
+  <p style="border: 1px solid black">Block Elements.</p>
+
+  <hr>
+
+  <p><span style="padding: 10px; border: 1px solid black">This is a span</span></p>
+
+  <hr>
+
+  <p style="width: 20px; border: 1px solid black;background-color: lightblue">1</p>
+  <p style="width: 20px; border: 1px solid black; background-color: lightblue">2</p>
+
+  <hr>
+
+  <div style="border: 1px solid black; padding: 10px; margin: 30px;">Block</div>
+  <div style="border: 1px solid black; padding: 10px; margin: 30px;">Block</div>
+
+  <hr>
+
+  <a href="mailto:nishitostwal3@gmail.com">Mail me</a>
+  <br>
+  <a href="tel:+916264444941">Phone no.</a>
+
+  <hr>
+
+  <img src="image1.jpg" class="middle" alt="Error404" title="Waifu">
+
+  <a href="image1.jpg" target="_blank">Preview image</a>
+  <br>
+  <a href="image1.jpg" download>Downlead image</a>
+
+  <hr>
+
+  <b> This is the use of bold tag.</b>
+  <br>
+  <strong>This is the use of strong tag.(It is imp)</strong>
+  <br>
+  <i>This is the use of italic tag.</i>
+  <br>
+  <em>This is the use of emphathis tag.</em>
+
+  <hr>
+
+  <p> a<sup>2</sup> + b<sup>2</sup> = c<sup>2<sup></p>
+  <p> H<sub>2</sub>SO<sub>4</sub> is chemical formula for sulphuric acid. </p>
+
+  <hr>
+
+  <p>On the Insert tab, <b> the galleries include items </b> that are designed to coordinate with the overall look of
+    your document. <i>You can use these galleries to <u> insert tables, headers, footers, lists, cover pages, and other
+        document </u> building blocks.</i> <strong>When you create pictures, charts, or diagrams</strong>, they also
+    coordinate <em>with your current document </em> look. You can easily <sub> change </sub> the formatting of selected
+    text in the document text by <del> choosing a look for the selected text </del> from the <mark> Quick <sup> Styles
+      </sup> gallery </mark> on the Home tab. <ins> You, can also format </ins> text directly by using the other
+    controls on the <big> Home tab </big>. Most controls offer a choice of using the look <small> from the current theme
+    </small> or using a format that you specify directly.</p>
+
+  <hr>
+
+  <p>Please give me feedback of the learning page.
+    <br>
+    To give the feedback click on the link below.
+    <br>
+  <a href="feedback.html" target="_blank">Click me  </a>
+  </p>
+  
+  <style>
+    .middle {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</body>
+
+</html>

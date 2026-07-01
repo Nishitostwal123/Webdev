@@ -1,0 +1,44 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style type="text/css">
+    canvas { border: 1px solid black; } 
+</style></head>
+
+<body>
+    <h1>Happy face using canvas</h1>
+    <canvas id="myCanvas" height="200" width="200"></canvas>
+
+<script type="text/javascript">	
+        
+    // Get the canvas element
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    // Draw face
+    ctx.beginPath();
+    ctx.arc(100, 100, 80, 0, 2 * Math.PI); // Draw face outline
+    ctx.fillStyle = "yellow"; // Fill color
+    ctx.fill(); // Fill the circle
+
+    // Draw eyes
+    ctx.beginPath();
+    ctx.arc(70, 80, 10, 0, 2 * Math.PI); // Left eye
+    ctx.fillStyle = "black"; // Eye color
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(130, 80, 10, 0,2 * Math.PI); // Right eye
+    ctx.fillStyle = "black"; // Eye color
+    ctx.fill();
+
+    // Draw mouth
+    ctx.beginPath();
+    ctx.arc(100, 120, 30, 0, Math.PI); // Mouth
+    ctx.lineWidth = 2; // Set line width
+    ctx.stroke(); // Draw the path
+
+</script> 
+
+</body></html>
